@@ -1,0 +1,135 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled7.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyOAEtQHSLkOnvpX2uAh2Iki",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Shobhit0403/BCI/blob/master/basic_forward_propagation\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZrgV3Tku_c8s",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import tensorflow as tf \n",
+        "import numpy as np"
+      ],
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xRDvctoqAqzl",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# model parameters \n",
+        "input_size = 2 \n",
+        "layers = [4,3]\n",
+        "output_size = 2"
+      ],
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rHI1f03pdeaM",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# softmax \n",
+        "def softmax(a):\n",
+        "  e_pa = np.exp(a)\n",
+        "  row_sum = np.sum(e_pa, axis=1, keepdims = true)\n",
+        "  ans = e_pa / row_sum\n",
+        "  return ans "
+      ],
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "1V1mxaHnwfso",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "class Neural_net:\n",
+        "  def __init__(self , input_size , layer, output_size):\n",
+        "    np.random.seeds(0)\n",
+        "\n",
+        "    model = {}\n",
+        "\n",
+        "    model['w1'] = np.random.randn(input, layer[0])\n",
+        "    model['b1'] = np.zeros((1,layer[0]))\n",
+        "\n",
+        "    model['w1'] = np.random.randn(layer[0], layer[1])\n",
+        "    model['b1'] = np.zeros((1,layer[1]))\n",
+        "\n",
+        "    model['w1'] = np.random.randn(layer[1],output)\n",
+        "    model['b1'] = np.zeros((1,output))\n",
+        "\n",
+        "    self.model = model \n",
+        "\n",
+        "  def forward(self , x):\n",
+        "\n",
+        "    w1, w2, w3 = self.models['w1'],self.models['w2'],self.models['w3'] \n",
+        "    b1, b2, b3 = self.models['b1'],self.models['b2'],self.models['b3']  \n",
+        "\n",
+        "    z1 = np.dot(x,w1) +b1 \n",
+        "    A1  = np.tanh(z1)  \n",
+        "\n",
+        "    z2 = np.dot(A1,w1) +b2 \n",
+        "    A2  = np.tanh(z2)  \n",
+        "    \n",
+        "    z3 = np.dot(A2,w1) +b3 \n",
+        "    y_  = softmax(z3)  \n",
+        "\n",
+        "    \n",
+        "    "
+      ],
+      "execution_count": 14,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rN3YLPU00bou",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 10,
+      "outputs": []
+    }
+  ]
+}
